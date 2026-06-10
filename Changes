@@ -1,0 +1,6 @@
+Revision history for Samizdat-Plugin-Customer
+
+0.01
+    - Extracted from the Samizdat monorepo (history-preserving). Foundational module:
+      customer entities, settings, services + the customer schema migration (which
+      also holds the invoice/payment tables). Required by the offerable/operator dists.

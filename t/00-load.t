@@ -1,0 +1,10 @@
+use strict; use warnings; use Test::More;
+use_ok('Samizdat::Model::Customer');
+use_ok('Samizdat::Controller::Customer');
+use_ok('Samizdat::Plugin::Customer');
+use File::Spec;
+my ($d) = grep { -d } map { File::Spec->catdir($_, 'Samizdat','resources') } @INC;
+ok($d, 'resources dir is on @INC');
+ok(-d File::Spec->catdir($d,'templates','customer'), 'customer templates ship');
+ok(-f File::Spec->catfile($d,'migrations','pg','30-customer','1','up.sql'), 'customer migration ships');
+done_testing;
